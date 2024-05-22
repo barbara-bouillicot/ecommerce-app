@@ -7,8 +7,10 @@ export default function Header(props){
       <div>
         {props.children}
       </div>
-      <div>
-        <h1>Explore nature with our gear</h1>
+      <div className="tagline-btn-centered">
+        <div className="tagline">
+          <h1>Make your home comfortable and elegant</h1>
+        </div>
         <Link to="/products">
           <button className="explore-btn">EXPLORE MORE</button>
         </Link>

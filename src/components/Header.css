@@ -1,13 +1,31 @@
 header{
   width: 100%;
   min-height: 100vh;
-  background-image: url(/src/assets/bg-image-home.jpg);
+  background-image: url(/src/assets/bg-image-homepage.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+}
+
+.tagline-btn-centered{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tagline{
+  width: 40%;
   text-align: center;
 }
 
+
 h1{
-  margin: 0;
+  font-size: 48px;
+  margin-top: 40px;
+  color: white;
 }
 
 .explore-btn{
