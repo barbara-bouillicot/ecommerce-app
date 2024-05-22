@@ -1,4 +1,21 @@
 header{
   width: 100%;
-  background-color: grey;
+  min-height: 100vh;
+  background-image: url(/src/assets/bg-image-home.jpg);
+  background-size: cover;
+  text-align: center;
+}
+
+h1{
+  margin: 0;
+}
+
+.explore-btn{
+  background-color: rgb(235, 180, 29);
+  color: black;
+  font-weight: bold;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-top: 70px;
 }
