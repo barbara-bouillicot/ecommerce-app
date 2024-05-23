@@ -5,7 +5,9 @@ import Products from './pages/Products';
 import About from './pages/About';
 import Cart from './pages/Cart'
 
+
 function App() {
+
   return (
     <Router>
     <div>
