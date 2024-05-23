@@ -1,6 +1,10 @@
+import './Home.css';
 import Header from "./Header"
 import Navbar from "./Navbar"
-import FreeDelivery from "../assets/free-delivery.png"
+import FreeDelivery from "../assets/trust-badge-delivery.png"
+import SafeBadge from "../assets/trust-badge-safe.png"
+import GuaranteeBadge from "../assets/trust-badge-guarantee.png"
+import InstallationBadge from "../assets/trust-badge-installation.png"
 import TrustBadge from "./TrustBadge"
 
 
@@ -11,11 +15,17 @@ export default function Home() {
         <Navbar/>
       </Header>
       <main>
+        <section className="about-us-section">
+          <h2>Why Choosing Us?</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+          <button>Read More → </button>
+        </section>
         <section class="badges-container">
           <TrustBadge title="Free delivery" img={FreeDelivery}/>
-          <TrustBadge title="Safe and reliable" img={FreeDelivery}/>
-          <TrustBadge title="Free installation" img={FreeDelivery}/>
-          <TrustBadge title="Free guaranteed" img={FreeDelivery}/>
+          <TrustBadge title="Safe and reliable" img={SafeBadge}/>
+          <TrustBadge title="Free installation" img={InstallationBadge}/>
+          <TrustBadge title="Guaranteed" img={GuaranteeBadge}/>
         </section>
       </main>
     </div>

@@ -5,10 +5,14 @@
 }
 
 .badge{
-  text-align: center;
-  background-color: rgb(22, 22, 85);
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(12, 12, 139, 0.739);
   padding: 15px;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
 .badge img{
@@ -17,4 +21,15 @@
 
 .badge h3{
   color: white;
+  text-align: center;
+}
+
+.img-badge{
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

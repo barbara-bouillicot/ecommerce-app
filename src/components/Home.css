@@ -1,0 +1,9 @@
+.about-us-section{
+  width: 50%;
+  margin-left: 5%;
+
+  button{
+    border:none;
+    background-color: inherit;
+  }
+}

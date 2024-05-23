@@ -4,6 +4,7 @@ header{
   background-image: url(/src/assets/bg-image-homepage.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   flex-direction: column;
 }
