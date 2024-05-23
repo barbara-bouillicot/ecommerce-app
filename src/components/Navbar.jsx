@@ -13,14 +13,16 @@ export default function Navbar(){
       </div>
       <nav>
         <ul className="nav-links">
-          <li><Link to="/home">Home</Link></li>
-          <li><a href="#shop">Shop</a></li>
-          <li><a href="#about">About</a></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/products">Shop</Link></li>
+          <li><Link to="/about">About</Link></li>
           <li><a href="#contact us">Contact</a></li>
         </ul>
       </nav>
       <div>
-        <FontAwesomeIcon icon={faCartShopping} />
+        <Link to="/cart">
+          <FontAwesomeIcon icon={faCartShopping} />
+        </Link>
       </div>
     </div>
   )
