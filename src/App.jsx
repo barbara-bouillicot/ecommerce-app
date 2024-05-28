@@ -3,12 +3,14 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Products from './pages/Products';
 import About from './pages/About';
-import Cart from './pages/Cart'
+import Cart from './pages/Cart';
+import { CartProvider } from './components/CartContext';
 
 
 function App() {
 
   return (
+    <CartProvider>
     <Router>
     <div>
       <Routes>
@@ -19,6 +21,7 @@ function App() {
       </Routes>
     </div>
     </Router>
+    </CartProvider>
   );
 }
 

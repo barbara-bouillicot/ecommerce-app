@@ -9,12 +9,12 @@ import TrustBadge from "../components/TrustBadge"
 import { Link } from "react-router-dom";
 
 
-
 export default function Home() {
+
   return (
     <div>
       <Header>
-        <Navbar/>
+        <Navbar />
       </Header>
       <main>
         <section className="about-us-section">

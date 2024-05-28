@@ -25,3 +25,31 @@ a{
   text-decoration: none;
   color: white;
 }
+
+.navbar-products{
+  background-color: rgb(7, 7, 69);
+}
+
+.cart-link {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-icon {
+  font-size: 24px;
+}
+
+.cart-length {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+}

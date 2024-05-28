@@ -2,10 +2,14 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
-
+import { useContext } from 'react';
+import { CartContext } from '../components/CartContext'
 
 
 export default function Navbar(){
+  const { cart } = useContext(CartContext);
+
+
   return(
     <div className="navbar-container">
       <div className="logo-container">
@@ -20,8 +24,9 @@ export default function Navbar(){
         </ul>
       </nav>
       <div>
-        <Link to="/cart">
-          <FontAwesomeIcon icon={faCartShopping} />
+        <Link to="/cart" className="cart-link">
+          <FontAwesomeIcon icon={faCartShopping} className="cart-icon"/>
+          {cart.length > 0 && <span className="cart-length">{cart.length}</span>}
         </Link>
       </div>
     </div>
