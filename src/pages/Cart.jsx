@@ -10,8 +10,6 @@ export default function Cart() {
   const { removeFromCart } = useContext(CartContext);
   const { increaseQuantity } = useContext(CartContext);
   const { decreaseQuantity } = useContext(CartContext);
-  let count = 0
-  const cartNbItems = cart.map((cartItem) => count += cartItem.quantity )
 
   return (
     <div>
