@@ -8,12 +8,15 @@ import { CartContext } from '../components/CartContext'
 
 export default function Navbar(){
   const { cart } = useContext(CartContext);
-
+  let count = 0
+  const cartNbItems = cart.map((cartItem) => count += cartItem.quantity )
 
   return(
     <div className="navbar-container">
       <div className="logo-container">
+      <Link to="/">
         <h2>FURNITURE</h2>
+      </Link>
       </div>
       <nav>
         <ul className="nav-links">
@@ -26,7 +29,7 @@ export default function Navbar(){
       <div>
         <Link to="/cart" className="cart-link">
           <FontAwesomeIcon icon={faCartShopping} className="cart-icon"/>
-          {cart.length > 0 && <span className="cart-length">{cart.length}</span>}
+          {count > 0 && <span className="cart-length">{count}</span>}
         </Link>
       </div>
     </div>

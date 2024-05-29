@@ -50,3 +50,19 @@
   background-color: inherit;
   text-decoration: underline;
 }
+
+.continue-shopping-btn{
+  background-color: inherit;
+  padding: 4px;
+  border: 1px solid rgb(216, 210, 210);
+}
+
+.checkout-btn{
+  border:none;
+  width: 100%;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: rgb(7, 7, 69);
+  padding: 8px 12px;
+}

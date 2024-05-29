@@ -5,32 +5,61 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [quantity, setQuantity] = useState(1);
 
   const addToCart = (item) => {
-    setCart((prevCart) => [...prevCart, item]);
-    console.log(item.id)
+    setCart((prevCart) => {
+      const existingItem = prevCart.find(cartItem => cartItem.id === item.id);
+      if (existingItem) {
+        return prevCart.map(cartItem =>
+          cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
+        );
+      } else {
+        return [...prevCart, { ...item, quantity: 1 }];
+      }
+    });
     setTotalPrice((prevTotalPrice) => prevTotalPrice + item.price);
   };
 
   const removeFromCart = (item) => {
-    const updatedCart = cart.filter(cartItem => cartItem.id !== item.id);
-    setCart(updatedCart);
-    setTotalPrice(updatedCart.reduce((prev, curr) => prev + curr.price, 0));
+    setCart((prevCart) => {
+      const removedItems = prevCart.filter(cartItem => cartItem.id !== item.id);
+      const removedItemsTotalPrice = removedItems.reduce((total, removedItem) => total + (removedItem.price * removedItem.quantity), 0);
+      setTotalPrice(removedItemsTotalPrice);
+      return removedItems;
+    });
   };
 
-  const addQuantity = (itemId) => {
-    setCart((prevCart) =>
-      prevCart.map((item) =>
-        item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item
-      )
-    );
-    setTotalPrice((prevTotalPrice) => prevTotalPrice + cart.find((item) => item.id === itemId).price);
-    setQuantity((prevQuantity) => prevQuantity + 1);
+
+  const increaseQuantity = (itemId) => {
+    setCart((prevCart) => {
+      return prevCart.map(cartItem =>
+        cartItem.id === itemId ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
+      );
+    });
+    const item = cart.find(cartItem => cartItem.id === itemId);
+    if (item) {
+      setTotalPrice((prevTotalPrice) => prevTotalPrice + item.price);
+    }
   };
+
+  const decreaseQuantity = (itemId) => {
+    const item = cart.find(cartItem => cartItem.id === itemId);
+    if (item && item.quantity > 1) {
+      setCart((prevCart) =>
+        prevCart.map(cartItem =>
+          cartItem.id === itemId ? { ...cartItem, quantity: cartItem.quantity - 1 } : cartItem
+        )
+      );
+      setTotalPrice((prevTotalPrice) => prevTotalPrice - item.price);
+    } else if (item && item.quantity === 1) {
+      removeFromCart(item);
+    }
+  };
+
+
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, totalPrice, removeFromCart, quantity, addQuantity }}>
+    <CartContext.Provider value={{ cart, addToCart, totalPrice, removeFromCart, increaseQuantity, decreaseQuantity }}>
       {children}
     </CartContext.Provider>
   );

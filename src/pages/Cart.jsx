@@ -8,13 +8,15 @@ export default function Cart() {
   const { cart } = useContext(CartContext);
   const { totalPrice } = useContext(CartContext);
   const { removeFromCart } = useContext(CartContext);
-  const { addQuantity } = useContext(CartContext);
-  const { quantity } = useContext(CartContext);
+  const { increaseQuantity } = useContext(CartContext);
+  const { decreaseQuantity } = useContext(CartContext);
+  let count = 0
+  const cartNbItems = cart.map((cartItem) => count += cartItem.quantity )
 
   return (
     <div>
     <Link to="/products">
-      <button>← Continue shopping</button>
+      <button className='continue-shopping-btn'>← Continue shopping</button>
       </Link>
     <div className="cart">
       <div className='cart-summary'>
@@ -28,9 +30,9 @@ export default function Cart() {
               <p>{item.name}</p>
               <p>{item.price} €</p>
               <div className='cart-quantity-container'>
-                <button className='quantity-btn'>-</button>
-                <div className="cart-quantity">{quantity}</div>
-                <button className='quantity-btn' onClick={() => addQuantity(item.id)}>+</button>
+                <button className='quantity-btn' onClick={() => decreaseQuantity(item.id)}>-</button>
+                <div className="cart-quantity">{item.quantity}</div>
+                <button className='quantity-btn' onClick={() => increaseQuantity(item.id)}>+</button>
               </div>
               <button className="remove-btn"onClick={() => removeFromCart(item)}>Remove</button>
             </li>
@@ -40,9 +42,9 @@ export default function Cart() {
     </div>
     <div className='order-summary'>
       <h2>Your Order Summary</h2>
-      <p>{cart.length} items </p>
+      <p>{cart.reduce((sum, item) => sum + item.quantity, 0)} items </p>
       <p>Total Price: {totalPrice} €</p>
-      <button>Checkout</button>
+      <button className='checkout-btn'>Checkout</button>
     </div>
     </div>
     </div>
