@@ -1,9 +1,59 @@
 .about-us-section{
-  width: 30%;
-  margin-left: 5%;
+  display: flex;
+  justify-content: space-around;
+  margin: 80px 0 80px 0;
 
   button{
     border:none;
     background-color: inherit;
   }
+}
+
+.about-us-section img{
+  width: 320px;
+  height: 400px;
+  object-fit: cover;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+.about-us-center{
+  width: 30%;
+}
+
+.about-us-center h2{
+  font-size: 32px;
+}
+
+.img-top{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.img-top img{
+  height: 150px;
+  width: 155px;
+}
+
+.img-bottom img{
+  height: 240px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+.best-sellers-section{
+  background-color: rgb(235, 233, 233);
+  padding: 40px 10px 40px 10px;
+}
+
+.best-sellers-section h2{
+  text-align: center;
+}
+
+.best-sellers-container{
+  display: flex;
+  justify-content: space-around;
 }
