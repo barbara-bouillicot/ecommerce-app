@@ -21,14 +21,34 @@ export default function Footer(){
       </div>
       <div className='right-footer'>
         <div className='newsletter-container'>
-          <p>Sign up for our newsletter</p>
+          <h2>Sign up for our newsletter</h2>
           <input type="text" placeholder='Your email address'/>
           <button type="submit">Submit</button>
+          <div className='separation-line'></div>
         </div>
         <div className="menu-links">
-          <a href="#home">Home</a>
-          <a href="#products">Products</a>
-          <a href="#instagram">Instagram</a>
+          <ul>
+            <li>Quick Links</li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Shop</a></li>
+            <li><a href="#About">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <ul>
+            <li>Follow Us</li>
+            <li><a href="#Facebook">Facebook</a></li>
+            <li><a href="#instagram">Instagram</a></li>
+            <li><a href="#linkedin">Linkedin</a></li>
+            <li><a href="#twitter">Twitter X</a></li>
+          </ul>
+          <ul>
+            <li>Resources</li>
+            <li><a href="#privacy-policy">Privacy Policy</a></li>
+            <li><a href="#terms-conditions">Terms & Conditions</a></li>
+            <li><a href="#delivery">Delivery</a></li>
+            <li><a href="#return">Return & Exchange</a></li>
+            <li><a href="#careers">Work with us</a></li>
+          </ul>
         </div>
       </div>
     </footer>

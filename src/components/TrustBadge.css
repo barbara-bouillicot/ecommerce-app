@@ -1,3 +1,7 @@
+.trust-badges-section h2{
+  text-align: center;
+}
+
 .badges-container{
   display: flex;
   justify-content: space-around;
@@ -8,9 +12,8 @@
   width: 120px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  background-color: rgba(12, 12, 139, 0.739);
+  background-color:  rgb(230, 231, 246);
   padding: 15px;
   border-radius: 8px;
 }
@@ -20,7 +23,7 @@
 }
 
 .badge h3{
-  color: white;
+  color: black;
   text-align: center;
 }
 
@@ -28,7 +31,6 @@
   width: 90px;
   height: 90px;
   border-radius: 50%;
-  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;

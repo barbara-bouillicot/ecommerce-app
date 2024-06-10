@@ -30,7 +30,7 @@ export default function Products() {
 
   const filteredProducts = products.filter(product =>
     product.name.toLowerCase().includes(query.toLowerCase()) &&
-    (selectedCategories.length === 0 || selectedCategories.includes(product.name.toLowerCase()))
+    (selectedCategories.length === 0 || selectedCategories.some(category => product.name.toLowerCase().includes(category)))
   );
 
   return (
@@ -38,9 +38,11 @@ export default function Products() {
       <div className="navbar-products">
         <Navbar />
       </div>
-      <h2>Products page</h2>
-      <Search setQuery={setQuery} />
-      <Filter onFilterChange={handleFilterChange} />
+      <div className='search-container'>
+      <h2>Find your next furniture here</h2>
+        <Search setQuery={setQuery} />
+        <Filter onFilterChange={handleFilterChange} selectedCategories={selectedCategories} />
+      </div>
       <div className="product-cards-container">
         {filteredProducts.map(product => (
           <ProductCard

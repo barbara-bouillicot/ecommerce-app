@@ -13,6 +13,8 @@
   width: 40%;
   background-color: rgb(198, 194, 194);
   padding: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
 .cart-item-card{

@@ -1,10 +1,26 @@
-export default function Search({ setQuery }) {
+import React from 'react';
+import "./Search.css"
 
-  const searchItem = (event) => {
-    setQuery(event.currentTarget.value);
+function Search({ setQuery }) {
+  const handleSearchChange = (event) => {
+    setQuery(event.target.value);
   };
 
   return (
-    <input type="text" onChange={searchItem} />
+    <div className="search-container">
+      <div className="search-bar">
+        <input
+          type="text"
+          placeholder="Search for furniture..."
+          className="search-input"
+          onChange={handleSearchChange}
+        />
+        <button className="search-button">
+          Search
+        </button>
+      </div>
+    </div>
   );
 }
+
+export default Search;

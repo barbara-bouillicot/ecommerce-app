@@ -7,6 +7,7 @@ import imgFurniture from "../assets/furniture-img.jpg"
 import imgFurniture2 from "../assets/furniture-img-2.jpg"
 import imgFurniture3 from "../assets/furniture-img-3.jpg"
 import imgFurniture4 from "../assets/furniture-img-4.jpg"
+import imgFurniture5 from "../assets/furniture-img-5.jpg"
 import FreeDelivery from "../assets/trust-badge-delivery.png"
 import SafeBadge from "../assets/trust-badge-safe.png"
 import GuaranteeBadge from "../assets/trust-badge-guarantee.png"
@@ -25,14 +26,17 @@ export default function Home() {
         <Navbar />
       </Header>
       <main>
-        <section class="badges-container">
+      <section className='trust-badges-section'>
+        <h2>Best services for you</h2>
+        <div class="badges-container">
           <TrustBadge title="Free delivery" img={FreeDelivery}/>
           <TrustBadge title="Safe and reliable" img={SafeBadge}/>
           <TrustBadge title="Free installation" img={InstallationBadge}/>
           <TrustBadge title="Guaranteed" img={GuaranteeBadge}/>
+        </div>
         </section>
         <section className='best-sellers-section'>
-          <h2>Best Sellers</h2>
+          <h2>Our Best Sellers</h2>
           <div className="best-sellers-container">
             {bestSellers.map((item) => (
               <ProductCard
@@ -43,6 +47,9 @@ export default function Home() {
                 price={item.price}
               />
             ))}
+            <Link to="/products">
+              <button className='btn-shop-all'>Shop all → </button>
+            </Link>
           </div>
         </section>
         <section>
@@ -66,6 +73,19 @@ export default function Home() {
                 <img src={imgFurniture4} alt="" />
               </div>
             </div>
+          </div>
+        </section>
+        <section className="recommendation-section">
+          <div className='recommendation-left'>
+            <h2>Our recommendation</h2>
+            <p>
+             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            </p>
+          </div>
+          <div className='decoration-line'>
+          <div className='img-rigth'>
+            <img src={imgFurniture5} alt="" />
+          </div>
           </div>
         </section>
       </main>

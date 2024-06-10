@@ -45,15 +45,47 @@
 }
 
 .best-sellers-section{
-  background-color: rgb(235, 233, 233);
-  padding: 40px 10px 40px 10px;
+  background-color:  rgb(230, 231, 246);
+  padding: 60px 20px 60px 20px;
+  position: relative;
 }
 
 .best-sellers-section h2{
   text-align: center;
+  margin-bottom: 80px;
 }
 
 .best-sellers-container{
   display: flex;
   justify-content: space-around;
+}
+
+.btn-shop-all{
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  border:none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.recommendation-section{
+  display: flex;
+  min-height: 500px;
+  justify-content: space-around;
+  align-items: center;
+  padding: 60px 20px 60px 20px;
+  background-color: rgb(230, 231, 246);
+}
+
+.recommendation-left{
+  width: 40%;
+}
+
+.img-rigth img{
+  width: 420px;
+  height: 500px;
+  object-fit: cover;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
 }

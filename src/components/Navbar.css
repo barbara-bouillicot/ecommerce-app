@@ -16,6 +16,11 @@
   margin-right: 145px;
 }
 
+.nav-links a{
+  font-weight: bold;
+  font-size: 16px;
+}
+
 li{
   list-style: none;
   margin: 0 20px 0 20px;
