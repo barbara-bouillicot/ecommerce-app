@@ -5,23 +5,23 @@ import "./Cart.css";
 import CheckoutForm from '../components/Checkout';
 
 export default function Cart() {
-  const { cart } = useContext(CartContext);
-  const { totalPrice } = useContext(CartContext);
-  const { removeFromCart } = useContext(CartContext);
-  const { increaseQuantity } = useContext(CartContext);
-  const { decreaseQuantity } = useContext(CartContext);
-
+  const { cart, totalPrice, removeFromCart, increaseQuantity, decreaseQuantity } = useContext(CartContext);
   const [showCheckoutForm, setShowCheckoutForm] = useState(false);
   const [emptyCartMessage, setEmptyCartMessage] = useState('');
-
 
   const handleCheckoutClick = () => {
     if (cart.length === 0) {
       setShowCheckoutForm(false);
       setEmptyCartMessage("Cannot proceed to checkout. Your cart is empty.");
-    } else {
+    } else {
       setShowCheckoutForm(!showCheckoutForm);
       setEmptyCartMessage("");
+    }
+  };
+
+  const handleRemoveClick = (item) => {
+    if (window.confirm("Are you sure you want to remove this item from the cart?")) {
+      removeFromCart(item);
     }
   };
 
@@ -46,7 +46,7 @@ export default function Cart() {
                     <div className="cart-quantity">{item.quantity}</div>
                     <button className='quantity-btn' onClick={() => increaseQuantity(item.id)}>+</button>
                   </div>
-                  <button className="remove-btn" onClick={() => removeFromCart(item)}>Remove</button>
+                  <button className="remove-btn" onClick={() => handleRemoveClick(item)}>Remove</button>
                 </li>
               ))}
             </ul>
@@ -54,16 +54,16 @@ export default function Cart() {
         </div>
         <div className='order-summary'>
           <h2>Your Order Summary</h2>
-          <p>{cart.reduce((sum, item) => sum + item.quantity, 0)} items </p>
-          <div>
+          <p>You currently have {cart.reduce((sum, item) => sum + item.quantity, 0)} items in your cart</p>
+          <div className='order-summary-items'>
             {cart.map((item) => (
-              <div key={item.id}>
+              <div key={item.id} className='order-summary-item'>
                 <p>{item.name}</p>
                 <p> X {item.quantity}</p>
               </div>
             ))}
           </div>
-          <p>Total Price: {totalPrice} €</p>
+          <p className='total-price'>Total Price: {totalPrice} €</p>
           <button className='checkout-btn' onClick={handleCheckoutClick}>
             {showCheckoutForm ? 'Hide Checkout' : 'Checkout'}
           </button>

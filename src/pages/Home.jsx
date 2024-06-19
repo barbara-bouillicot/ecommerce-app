@@ -14,7 +14,7 @@ import GuaranteeBadge from "../assets/trust-badge-guarantee.png"
 import InstallationBadge from "../assets/trust-badge-installation.png"
 import TrustBadge from "../components/TrustBadge"
 import { Link } from "react-router-dom";
-import { products } from "../pages/Products";
+import products from '../data'
 
 
 export default function Home() {

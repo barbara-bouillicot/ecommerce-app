@@ -4,7 +4,7 @@ export default function TrustBadge(props) {
   return(
     <div className="badge">
       <div className="img-badge">
-        <img src={props.img} alt="" />
+        <img src={props.img} alt={props.title} />
       </div>
       <div className="img-title">
         <h3>{props.title}</h3>

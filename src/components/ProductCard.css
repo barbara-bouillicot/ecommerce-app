@@ -7,12 +7,15 @@
 
 .product-card{
   max-width: 250px;
+  min-width: 250px;
   display: flex;
   flex-direction: column;
 }
 
 .product-card img{
   width: 100%;
+  height: 200px;
+  object-fit: cover;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
@@ -67,7 +70,7 @@
 
 .filter-tag:hover,
 .filter-tag.active {
-  background-color: #000;
+  background-color: rgb(10, 10, 97);
   color: #fff;
   border-color: #000;
 }

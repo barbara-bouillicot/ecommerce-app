@@ -25,11 +25,11 @@ export default function Filter({ onFilterChange, selectedCategories }) {
         Chair
       </button>
       <button
-        name="table"
+        name="cupboard"
         onClick={buttonClicked}
         className={`filter-tag ${isActive("table") ? 'active' : ''}`}
       >
-        Table
+        Cupboard
       </button>
     </div>
   );
